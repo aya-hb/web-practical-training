@@ -20,10 +20,16 @@
     color: black;
 }
 
+#header{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
 .wrapper{
     padding: 0px 50px;
     /* max-width: 100%; */
-    display:flex;
+    /* display:flex; */
     justify-content: space-between;
 }
 
@@ -35,4 +41,37 @@
 
 .menu li{
     list-style: none;
+}
+
+.link-text{
+    text-align: center;
+    margin-top: 40px;
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+@media(max-width:600px){
+    .product-list{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap:20px
+    }
+    .product-list img{
+        height:200px;
+        width: auto;
+
+    }
+    .product-list p{
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin-top: 6px;
+    }
+    .wrapper{
+    padding: 0px 50px;
+    /* max-width: 100%; */
+    /* display:flex; */
+    justify-content: space-between;
+    }
+    
 }
