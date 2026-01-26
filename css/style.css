@@ -32,6 +32,7 @@
     /* max-width: 100%; */
     /* display:flex; */
     justify-content: space-between;
+    margin-bottom: 3.5rem;
 }
 
 .menu{
@@ -53,9 +54,38 @@
 }
 
 /* ここまでindex.html */
-
 /* ここからitem.1 */
+.page-title{
+    font-size: 1.2rem;
+    padding-bottom: 2rem;
+}
+.item{
+    display: flex;
+    max-width: 800px;
+    justify-content: space-between;
+}
 
+.item .item-image{
+    width:42%;
+}
+
+.item .item-text{
+    width: 50%;
+}
+
+.item .item-text p{
+    padding-bottom:1rem;
+}
+
+.item .item-image img{
+    width: 100%;
+}
+/* テーブルの編集 */
+.item table td{
+    padding-left: 1rem;
+}
+
+/* ここまでitem.1 */
 @media(max-width:600px){
     .product-list{
         display: grid;
