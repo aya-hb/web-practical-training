@@ -109,4 +109,28 @@
     justify-content: space-between;
     }
     
+    header h1{
+        font-size:2rem;
+    }
+
+    .page-title{
+        font-weight: normal;
+        font-size: 0.9rem;
+    }
+    .item{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .item .item-image{
+    width:100%;
+    }
+
+    .item .item-text{
+        width: 100%;
+    }
+
+    .item .item-text p{
+    padding-bottom:2rem;
+}
 }
