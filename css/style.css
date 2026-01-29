@@ -86,28 +86,44 @@
 }
 
 /* companyの編集 */
+#company{
+    max-width: 600px;
+}
+#company .info{
+    width: 100%;
+}
 .page-title{
     font-weight: normal;
 }
-.info {
+#company .info {
     display: flex;
     text-align: left;
+    border-collapse: collapse; /* 枠線を1本にする */
 }
 
-.info th{
+#company .info th{
     padding-right: 5rem;
     font-weight: normal;
 }
 
- table th,td {
+table th,td {
     border-bottom: 1px solid #c0c0c0; /* 線の太さ、種類、色 */
-    border-collapse: collapse; /* 枠線を1本にする */
-    line-height: 2;
+    line-height: 3;
     padding: 10px;
+    font-size: 15px;
+}
+
+table tr:last-child td{
+    border-bottom: none;
+    line-height: 2;
+}
+table tr:last-child th{
+    border-bottom: none;
 }
 .map{
     padding-top: 2rem;
     padding-bottom: 2rem;
+    filter:grayscale(100%);
 }
 /* ここまでitem.1 */
 @media(max-width:600px){
@@ -156,5 +172,22 @@
 
     .item .item-text p{
     padding-bottom:2rem;
-}
+    }
+    /* company */
+    .site-title{
+        text-align: left;
+        text-align: top;
+    }
+    table th{
+        border-bottom: none; 
+        line-height:0.5rem;
+    }
+    #company .info table, tr ,th,td{
+        display: block;
+        width: 100%;
+    }
+    .map iframe{
+        width: 300px;
+        height:320px;
+    }
 }
