@@ -85,6 +85,30 @@
     padding-left: 1rem;
 }
 
+/* companyの編集 */
+.page-title{
+    font-weight: normal;
+}
+.info {
+    display: flex;
+    text-align: left;
+}
+
+.info th{
+    padding-right: 5rem;
+    font-weight: normal;
+}
+
+ table th,td {
+    border-bottom: 1px solid #c0c0c0; /* 線の太さ、種類、色 */
+    border-collapse: collapse; /* 枠線を1本にする */
+    line-height: 2;
+    padding: 10px;
+}
+.map{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
 /* ここまでitem.1 */
 @media(max-width:600px){
     .product-list{
