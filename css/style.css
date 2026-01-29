@@ -180,20 +180,23 @@ table tr:last-child th{
     .site-title img{
         width: 75%;
     }
-    table td{
-        line-height: 1.5rem;
+    #company table td{
+        padding-top:0.2rem;
     }
-    table th{
+    #company table th{
         border-bottom: none; 
-        line-height:0.5rem;
+        padding-bottom: 0.2rem;
+        line-height:0.2rem;
     }
-    table tr{
-        padding-bottom: 1rem;
+    #company table tr{
+        padding: 10px 0;
     }
     #company .info table, tr ,th,td{
         display: block;
         width: 100%;
     }
+
+
     .map{
         text-align: center;
     }
