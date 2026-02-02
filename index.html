@@ -2,100 +2,133 @@
 <html lang ="ja">
     <head>
         <meta charset="utf-8">
-        <title>Furniture Design</title>
+        <title>Portfolio</title>
         <meta name ="description" content ='家具の紹介ページ'>
         <!-- pcとスマホを切り替えるために必ず必要なコード -->
         <meta name ='viewport' content="width=device-width",initial-scale='1'>
         <!-- ★=改造する時に触りたい！ -->
-        <link rel="icon" href="img/favicon.ico">
+        <link rel="icon" href="img/fabicon2.png">
         <!-- cssリセット　ブラウザによってcssがずれないようにするためのもの-->
         <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
         <!-- cssの読み込み -->
         <link rel="stylesheet" href="css/style.css">
         <!--JQUERY-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="js/main.js"></script>
+        <script src="js/main.js" defer></script>
     </head>
     <body>
         <header id="header" class="wrapper">
-            <h1 class="site-title">
-                <a href="index.html"><!--★-->
-                    <img src="img/logo.svg" alt="Furniture Design">
-                </a>
-            </h1>
-            <nav>
-                三
+            <div class="main">
+                <h1 class="site-title">
+                    <a href="index.html"><!--★-->
+                        <img src="img/title.png" width="700px" height="auto" alt="Furniture Design">
+                    </a>
+                </h1>
+                <!-- キャラクター表示 -->
+                <div class="robot">
+                    <img src="img/Designer.png" width="600px" height="700px" alt="ロボット">
+                </div>
+            </div>
+        <nav>
+            <!-- 開くボタン -->
+            <button type="button" id="menu-open" class="btn-menu">
+                <!-- ハンバーガ用の三本線 -->
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+                <div id="menu-panel">
+                    <!-- 開いている状態 -->
+                    <!-- 閉じるボタン -->
+                    <button type="button" id="menu-close" class="btn-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <!-- navの中身 -->
+                    <!-- ▲aの閉じがなかった！ -->
+                    <ul  class="menu-list">
+                        <li><a href="#">Online Shop</a></li>
+                        <li><a href="#">X(Twitter)</a></li>
+                        <li><a href="#">Youtube</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
             </nav>
         </header>
         <main>
             <div id="top" class="wrapper">
-                <ul class="product-list">
-                    <li>
-                        <!-- linkを貼る -->
-                        <a href="item1.html">
-                            <img src="img/item1.jpg" alt="item1">
-                        <p>プロダクトタイトルプロダクトタイトル</p>
-                        <p>￥99,999 +tax</p>
-                        </a>
-                    </li>
-                    <li>
-                        <!-- linkを貼る -->
-                        <a href="item2.html">
-                            <img src="img/item2.jpg" alt="item2">
-                        <p>プロダクトタイトルプロダクトタイトル</p>
-                        <p>￥99,999 +tax</p>
-                        </a>
-                    </li>
-                    <li>
-                        <!-- linkを貼る -->
-                        <a href="item3.html">
-                            <img src="img/item3.jpg" alt="item3">
-                        <p>プロダクトタイトルプロダクトタイトル</p>
-                        <p>￥99,999 +tax</p>
-                        </a>
-                    </li>
-                    <li>
-                        <!-- linkを貼る -->
-                        <a href="item4.html">
-                            <img src="img/item4.jpg" alt="item4">
-                        <p>プロダクトタイトルプロダクトタイトル</p>
-                        <p>￥99,999 +tax</p>
-                        </a>
-                    </li>
+                <h1 class="profile">
+                    profile
+                </h1>
+                <ul class="product-list fadeIn">
+                        <li>
+                            <!-- linkを貼る -->
+                            <a href="item1.html">
+                                <img src="img/1_Seitokai.jpg" alt="item1">
+                            <p>生徒会活動:高校時代</p>
+                            <p>高校二年生で生徒会を務めました</p>
+                            </a>
+                        </li>
+                        <li>
+                            <!-- linkを貼る -->
+                            <a href="item2.html">
+                                <img src="img/2_Group.jpeg" alt="item2">
+                            <p>グループ活動</p>
+                            <p>専門学校で取り組んだグループ活動では、リーダーを務めました</p>
+                            </a>
+                        </li>
+                        <li>
+                            <!-- linkを貼る -->
+                            <a href="item3.html">
+                                <img src="img/3_Proguraminngu.jpeg" alt="item3">
+                            <p>プログラミング</p>
+                            <p>現在、html,css,Javascriptを学んでいます。二年時では、PHP,Javaなどを学ぶ予定です。</p>
+                            </a>
+                        </li>
+                        <li>
+                            <!-- linkを貼る -->
+                            <a href="item4.html">
+                                <img src="img/4_Tyousyo.jpg" alt="item4">
+                            <p>自分の長所</p>
+                            <p>私の長所は周りを巻き込む力です</p>
+                            </a>
+                        </li>
                     <li>
                         <!-- linkを貼る -->
                         <a href="item5.html">
-                            <img src="img/item5.jpg" alt="item5">
-                        <p>プロダクトタイトルプロダクトタイトル</p>
-                        <p>￥99,999 +tax</p>
+                            <img src="img/5_Sky.jpeg" alt="item5">
+                        <p>してみたいこと</p>
+                        <p>空を飛んでみたいです。見たことない景色を見てみたい</p>
                         </a>
                     </li>
                     <li>
                         <!-- linkを貼る -->
                         <a href="item6.html">
-                            <img src="img/item6.jpg" alt="item6">
-                        <p>プロダクトタイトルプロダクトタイトル</p>
-                        <p>￥99,999 +tax</p>
+                            <img src="img/6_Projekuto.jpeg" alt="item6">
+                        <p>将来の展望</p>
+                        <p>入社後、5年以内にPMを務めます</p>
                         </a>
                     </li>
                     <li>
                         <!-- linkを貼る -->
                         <a href="item7.html">
-                            <img src="img/item7.jpg" alt="item7">
-                        <p>プロダクトタイトルプロダクトタイトル</p>
-                        <p>￥99,999 +tax</p>
+                            <img src="img/7_Apuri.png" alt="item7">
+                        <p>将来の展望:二年生での</p>
+                        <p>家計簿自動化アプリを作成したいです</p>
                         </a>
                     </li>
                     <li>
                         <!-- linkを貼る -->
                         <a href="item8.html">
-                            <img src="img/item8.jpg" alt="item8">
-                        <p>プロダクトタイトルプロダクトタイトル</p>
-                        <p>￥99,999 +tax</p>
+                            <img src="img/8_Amamiku1.jpg" alt="item8">
+                        <p>アルバイト</p>
+                        <p>高校二年生の春から、現在まで務めております。創作練り物を扱っているお店で、伊勢はんぺいが有名です</p>
                         </a>
                     </li>
-                    <li>
-                        <!-- linkを貼る -->
+                    <!-- <li>
+                        linkを貼る
                         <a href="item9.html">
                             <img src="img/item9.jpg" alt="item9">
                         <p>プロダクトタイトルプロダクトタイトル</p>
@@ -103,7 +136,7 @@
                         </a>
                     </li>
                     <li>
-                        <!-- linkを貼る -->
+                        <!-- linkを貼る
                         <a href="item10.html">
                             <img src="img/item10.jpg" alt="item10">
                         <p>プロダクトタイトルプロダクトタイトル</p>
@@ -111,7 +144,7 @@
                         </a>
                     </li>
                     <li>
-                        <!-- linkを貼る -->
+                        linkを貼る
                         <a href="item11.html">
                             <img src="img/item11.jpg" alt="item11">
                         <p>プロダクトタイトルプロダクトタイトル</p>
@@ -119,49 +152,49 @@
                         </a>
                     </li>
                     <li>
-                        <!-- linkを貼る -->
+                        linkを貼る
                         <a href="item12.html">
                             <img src="img/item12.jpg" alt="item12">
                         <p>プロダクトタイトルプロダクトタイトル</p>
                         <p>￥99,999 +tax</p>
-                        </a>
-                    </li>
+                        </a> -->
+                    <!-- </li>
                     <li>
-                        <!-- linkを貼る -->
+                        linkを貼る
                         <a href="item13.html">
                             <img src="img/item13.jpg" alt="item13">
                         <p>プロダクトタイトルプロダクトタイトル</p>
                         <p>￥99,999 +tax</p>
                         </a>
                     </li>
-                    <li>
+                    <li> -->
                         <!-- linkを貼る -->
-                        <a href="item14.html">
+                        <!-- <a href="item14.html">
                             <img src="img/item14.jpg" alt="item14">
                         <p>プロダクトタイトルプロダクトタイトル</p>
                         <p>￥99,999 +tax</p>
                         </a>
-                    </li>
-                    <li>
-                        <!-- linkを貼る -->
-                        <a href="item15.html">
+                    </li> -->
+                    <!-- <li>
+                        linkを貼る -->
+                        <!-- <a href="item15.html">
                             <img src="img/item15.jpg" alt="item15">
                         <p>プロダクトタイトルプロダクトタイトル</p>
                         <p>￥99,999 +tax</p>
                         </a>
                     </li>
-                    <li>
+                    <li> -->
                         <!-- linkを貼る -->
-                        <a href="item16.html">
+                        <!-- <a href="item16.html">
                             <img src="img/item16.jpg" alt="item16">
                         <p>プロダクトタイトルプロダクトタイトル</p>
                         <p>￥99,999 +tax</p>
-                        </a>
-                    </li>
+                        </a> -->
+                    <!-- </li> --> 
                 </ul>
                 <a class="link-text" href="products.html">View More</a>
-                <a class="link-text" href="company.html">Company</a>
-            </div>
+                <!-- <a class="link-text" href="company.html">Company</a>
+            </div> -->
         </main>
         <footer id="footer" class="wrapper">
             <ul class="menu">

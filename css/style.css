@@ -1,5 +1,18 @@
 @charset "utf-8";
 
+/* VARIABLES */
+/* サイト全体で使う色を先に変数で定義 */
+    :root {
+    --light-green: #d5edeb;
+    --green: #63dbd0;
+    --brown: #403632;
+    --light-grey: #eee;
+    --white: #fff;
+    --lightPink:#ffb6c1;
+    --Pink:#ffc0cb;
+    --oswald-font: "Oswald", sans-serif;
+    }
+
 /* ここからindex.html */
 /* メイン画像をグリッド表示にする */
 .site-title img{
@@ -10,6 +23,15 @@
     grid-template-columns: repeat(4,1fr);
     gap: 35px;
     list-style: none;
+}
+
+/* メインの画像と文字を編集する */
+.main{
+    display: flex;
+}
+
+#top .profile{
+    color: var(--lightPink);
 }
 
 /* 画像の表示サイズを調整する */
@@ -128,6 +150,94 @@ table tr:last-child th{
     padding-bottom: 2rem;
     filter:grayscale(100%);
 }
+/* nav */
+/* スライドメニュー */
+
+/* 開閉ボタン(共通部分) */
+.btn-menu{
+  /* 右上に固定する */
+  position:fixed;
+  top:1rem;/*上*/
+  right:1rem;/* 右*/
+  z-index:4;/*重なり位置*/
+  padding:0.5rem 1rem;/*内側余白*/
+  border:1px solid var(--brown);/*枠線　実線　ブラウン*/
+  border-radius:50%;
+  height:4rem;
+  width:4rem;
+}
+
+/* 開くボタンの三本線 */
+#menu-open span{
+  width:100%;
+  height:2px;
+  background-color: black;
+  position:relative;/*位置を相対的に*/
+  display: block;
+}
+
+/* spanタグそれぞれにcssをあてる */
+#menu-open span:nth-child(1){
+  top: 0;
+}
+#menu-open span:nth-child(2){
+  margin: 8px 0;/*ｙ軸方向（上下）への外側余白*/
+}
+#menu-open span:nth-child(3){
+  top:0;
+}
+/* 閉じるボタン */
+
+#menu-close{
+  border: 1px solid white;
+}
+#menu-close span{
+  width:100%;
+  height:2px;
+  background-color:white;
+  position:relative;/*位置を相対的に*/
+  display: block;
+}
+
+/* spanタグそれぞれにcssをあてる */
+#menu-close span:nth-child(1){
+  translate:0 4px;
+  transform: rotate(-315deg);/*変形の中の回転　-315度*/
+}
+#menu-close span:nth-child(2){
+  opacity:0;
+}
+#menu-close span:nth-child(3){
+  transform:rotate(-45deg);
+}
+/* スライドメニューパネル */
+#menu-panel{
+  position:fixed;
+  top:0;
+  right:0;
+  z-index:10;/*重なり位置*/
+  padding:8rem 2rem 2rem;
+  width:20vw;
+  height:100Vh;
+  background-color: var(--Pink);
+  font-family: var(--oswald-font);
+  translate:100vw;/*x軸　+100*/
+}
+
+.menu-list{
+  list-style: none;
+}
+
+.menu-list li{
+  margin: 1.5rem 0;
+  opacity: 0;
+}
+.menu-list a{
+  font-size: 2rem;
+  text-decoration: none;
+  color:var(--light-grey);
+}
+/* nav */
 /* ここまでitem.1 */
 @media(max-width:600px){
     .product-list{
