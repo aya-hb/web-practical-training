@@ -1,10 +1,47 @@
 //main　ローディングされるたびに画像が切り替わる
 const robot = document.querySelector(".robot");
 
-//画面が読み込まれたら、ロボットの画像を変える
-    window.addEventListener('load',()=>{
-        robot.src=img/58n;//画像のソースを切り替え（ランダムで切り替え）
+// //画面が読み込まれたら、ロボットの画像を変える
+//     window.onload = function() {
+//     // 1. 画像のパスを配列に入れる
+//     let images = [
+//         'img/kandou.png',
+//         'img/magao.jpg',
+//         'img/naku.jpg',
+//         'images/Oko.jpg'
+//     ];
+
+//     // 2. 配列からランダムに画像URLを1つ取得
+//     let randomImage = images[Math.floor(Math.random() * images.length)];
+
+//     // 3. imgタグのsrc属性を書き換える
+//     document.getElementById('random-img').src = randomImage;
+//     };
+
+    // window.addEventListener('load',()=>{
+    //     // robot.src=img/58n;//画像のソースを切り替え（ランダムで切り替え）
+    //         // 1. 画像のパスを配列に入れる
+    // let images = [
+    //     'img/kandou.png',
+    //     'img/magao.jpg',
+    //     'img/naku.jpg',
+    //     'img/Oko.jpg'
+    // ];
+
+    // // 2. 配列からランダムに画像URLを1つ取得
+    // let randomImage = images[Math.floor(Math.random() * images.length)];
+
+    // // 3. imgタグのsrc属性を書き換える
+    // document.getElementById('random-img').src = randomImage;
+    // });
+
+    // console.log(images);//imagesが取れていない
+    
+    window.addEventListener('load', () => {
+    const el = document.getElementById('random-img');
+    console.log('選ばれたURL:', el?.src, el?.currentSrc);
     });
+
 // nav
     // 要素の取得
     const openBtn = document.querySelector("#menu-open");
