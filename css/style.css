@@ -34,6 +34,14 @@
     color: var(--lightPink);
 }
 
+/* キャラの編集 */
+
+.robot-img {
+  width: 700px;      /* 表示したい幅 */
+  height: 600px;     /* 表示したい高さ */
+  object-fit: contain; /* はみ出さず、比率維持 */
+}
+
 /* 画像の表示サイズを調整する */
 .product-list img{
     width: 100%;
@@ -78,6 +86,16 @@
     display: block;
 }
 
+/* トーストの編集 */
+.toast{
+    position: fixed;   /* 要素を画面に固定 */
+    bottom: 20px;      /* 下からの位置 */
+    right: 20px;       /* 右からの位置 */
+    z-index: 9999;     /* 他の要素より上に表示する */
+    border:1px solid black ;
+    color: #ffc0cb;
+    border-radius: 15px;
+}
 /* ここまでindex.html */
 /* ここからitem.1 */
 .page-title{
