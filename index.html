@@ -17,17 +17,45 @@
         <script src="js/main.js" defer></script>
     </head>
     <body>
+        <!-- ===== ローディング画面 ===== -->
+        <div class="loading-screen" id="loading">
+            <div class="cats">
+                <div class="cat"></div>
+                <div class="cat"></div>
+                <div class="cat"></div>
+            </div>
+            <p id="percent">0%</p>
+        </div>
+        <!-- !-- ===== メインコンテンツ（最初は非表示） ===== -->
+        <div id="main-content" class="hidden">
+            <header>
+                <h1>Portfolio</h1>
+                <p>自己紹介ページです</p>
+            </header>
+            <section class="profile">
+                <h2>About Me</h2>
+                <p id="typing-text"></p>
+            </section>
+            <section class="skills">
+                <h2>Skills</h2>
+                <div class="skill-list">
+                    <div class="skill">HTML</div>
+                    <div class="skill">CSS</div>
+                    <div class="skill">JavaScript</div>
+                    <div class="skill">基本情報技術者</div>
+                </div>
+            </section> 
         <header id="header" class="wrapper">
             <div class="main">
                 <h1 class="site-title">
-                    <a href="index.html"><!--★-->
-                        <img src="img/title.png" alt="Furniture Design">
-                    </a>
+                    <!-- <a href="index.html"><!--★-->
+                        <!-- <img src="img/title.png" alt="Furniture Design">
+                    </a>  -->
                 </h1>
-                <!-- キャラクター表示 -->
+                <!-- キャラクター表示
                 <div class="robot">
                     <img src="img/Designer.png"  id="random-img" class="robot-img" alt="ロボット">
-                </div>
+                </div> --         
             </div>
         <nav>
             <!-- 開くボタン -->
@@ -60,7 +88,7 @@
         <main>
             <div id="top" class="wrapper">
                 <h1 class="profile">
-                    profile
+                    Contents
                 </h1>
                 <ul class="product-list fadeIn">
                         <li>
@@ -68,7 +96,7 @@
                             <a href="item1.html">
                                 <img src="img/1_Seitokai.jpg" alt="item1">
                             <p>生徒会活動:高校時代</p>
-                            <p>高校二年生で生徒会を務めました</p>
+                            <!-- <p>高校二年生で生徒会を務めました</p> -->
                             </a>
                         </li>
                         <li>
@@ -76,7 +104,7 @@
                             <a href="item2.html">
                                 <img src="img/2_Group.jpeg" alt="item2">
                             <p>グループ活動</p>
-                            <p>専門学校で取り組んだグループ活動では、リーダーを務めました</p>
+                            <!-- <p>専門学校で取り組んだグループ活動では、リーダーを務めました</p> -->
                             </a>
                         </li>
                         <li>
@@ -84,7 +112,7 @@
                             <a href="item3.html">
                                 <img src="img/3_Proguraminngu.jpeg" alt="item3">
                             <p>プログラミング</p>
-                            <p>現在、html,css,Javascriptを学んでいます。二年時では、PHP,Javaなどを学ぶ予定です。</p>
+                            <!-- <p>現在、html,css,Javascriptを学んでいます。二年時では、PHP,Javaなどを学ぶ予定です。</p> -->
                             </a>
                         </li>
                         <li>
@@ -92,7 +120,7 @@
                             <a href="item4.html">
                                 <img src="img/4_Tyousyo.jpg" alt="item4">
                             <p>自分の長所</p>
-                            <p>私の長所は周りを巻き込む力です</p>
+                            <!-- <p>私の長所は周りを巻き込む力です</p> -->
                             </a>
                         </li>
                     <li>
@@ -100,7 +128,7 @@
                         <a href="item5.html">
                             <img src="img/5_Sky.jpeg" alt="item5">
                         <p>してみたいこと</p>
-                        <p>空を飛んでみたいです。見たことない景色を見てみたい</p>
+                        <!-- <p>空を飛んでみたいです。見たことない景色を見てみたい</p> -->
                         </a>
                     </li>
                     <li>
@@ -108,7 +136,7 @@
                         <a href="item6.html">
                             <img src="img/6_Projekuto.jpeg" alt="item6">
                         <p>将来の展望</p>
-                        <p>入社後、5年以内にPMを務めます</p>
+                        <!-- <p>入社後、5年以内にPMを務めます</p> -->
                         </a>
                     </li>
                     <li>
@@ -116,7 +144,7 @@
                         <a href="item7.html">
                             <img src="img/7_Apuri.png" alt="item7">
                         <p>将来の展望:二年生での</p>
-                        <p>家計簿自動化アプリを作成したいです</p>
+                        <!-- <p>家計簿自動化アプリを作成したいです</p> -->
                         </a>
                     </li>
                     <li>
@@ -124,7 +152,7 @@
                         <a href="item8.html">
                             <img src="img/8_Amamiku1.jpg" alt="item8">
                         <p>アルバイト</p>
-                        <p>高校二年生の春から、現在まで務めております。創作練り物を扱っているお店で、伊勢はんぺいが有名です</p>
+                        <!-- <p>高校二年生の春から、現在まで務めております。創作練り物を扱っているお店で、伊勢はんぺいが有名です</p> -->
                         </a>
                     </li>
                     <!-- <li>
