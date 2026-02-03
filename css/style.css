@@ -14,15 +14,216 @@
     }
 
 /* ここからindex.html */
+/* ===== ローディング画面 ===== */
+.loading-screen {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: #ffb6c1;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ z-index: 999;
+}
+.cats {
+ display: flex;
+ gap: 20px;
+}
+.cat {
+ width: 60px;
+ height: 60px;
+ background: white;
+ mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M32 2C19 2 8 13 8 26c0 13 10 24 24 24s24-11 24-24C56 13 45 2 32 2zm-10 12l-6-6 6-6 6 6-6 6zm20 0l-6-6 6-6 6 6-6 6z"/></svg>');
+ -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M32 2C19 2 8 13 8 26c0 13 10 24 24 24s24-11 24-24C56 13 45 2 32 2zm-10 12l-6-6 6-6 6 6-6 6zm20 0l-6-6 6-6 6 6-6 6z"/></svg>');
+ animation: spin 1.2s linear infinite;
+}
+.cat:nth-child(2) { animation-delay: 0.2s; }
+.cat:nth-child(3) { animation-delay: 0.4s; }
+@keyframes spin {
+ from { transform: rotate(0deg); }
+ to { transform: rotate(360deg); }
+}
+#percent {
+ margin-top: 20px;
+ font-size: 20px;
+ color: white;
+ font-weight: bold;
+ letter-spacing: 1px;
+}
 /* メイン画像をグリッド表示にする */
 .site-title img{
     width: 75%;
 }
-.product-list{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 35px;
-    list-style: none;
+
+/* 横から流れてくるカラムの編集 */
+.flow-wrapper{
+  width: 100%;
+  overflow: hidden; /* ← PCで動かない原因はこれ */
+  display: flex;
+  justify-content: center; /* ← 中央寄せ */
+}
+
+.flow-container{
+  display: flex;
+  gap: 20px;
+  width: fit-content; /* ← 中央にまとめるコツ */
+  transition: transform 0.35s ease-out;
+}
+
+
+.flow-card{
+  min-width: 280px;
+  height: 380px;
+  border-radius: 24px;
+  padding: 20px;
+  position: relative;
+  scroll-snap-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform .3s ease;
+}
+
+.flow-card:hover{
+  transform: translateY(-5px);
+}
+
+/* カラムの下の・・・ */
+.flow-dots{
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.dot{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ddd;
+  transition: background .3s ease, transform .3s ease;
+  cursor: pointer; /* ← 追加：クリックできる見た目 */
+}
+
+.dot:hover{
+  transform: scale(1.3);
+}
+
+/* 今いる位置のドット */
+.dot.active{
+  background: #f3c6d1; /* あなたのサイトのピンク寄り */
+  transform: scale(1.2);
+}
+/* カラー（画像の雰囲気に寄せる） */
+.develop{ background:#f3c6d1; }
+.planning{ background:#e5e0ff; }
+.design{ background:#cde7e7; }
+
+/* 番号 */
+.flow-card .num{
+  position:absolute;
+  bottom:20px;
+  left:20px;
+  font-size:12px;
+  opacity:.6;
+}
+
+/* タイトル */
+.flow-card h3{
+  position:absolute;
+  bottom:45px;
+  left:20px;
+  font-size:22px;
+  margin:0;
+}
+
+/* +ボタン */
+.flow-card .icon{
+  position:absolute;
+  bottom:20px;
+  right:20px;
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  cursor:pointer;
+}
+/* topにくる画像の編集 */
+/* ===== メインコンテンツ ===== */
+header {
+ background: #ffb6c1;
+ color: white;
+ text-align: center;
+ padding: 40px 0;
+}
+section {
+ max-width: 800px;
+ margin: 40px auto;
+ padding: 20px;
+ background: white;
+ border-radius: 15px;
+ box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+h2 {
+ color: #ff8fab;
+}
+.skill-list {
+ display: flex;
+ gap: 10px;
+ flex-wrap: wrap;
+}
+.skill {
+ background: #ffd6e0;
+ padding: 10px 15px;
+ border-radius: 20px;
+}
+
+/* 全体の並びはそのまま、見た目だけカード化 */
+.product-list {
+gap: 20px; /* カードのすき間を少し広げる */
+display: grid;
+grid-template-columns: repeat(4,1fr);
+list-style: none;
+}
+
+/* 各アイテムをカード風に */
+.product-list li {
+ background: white;
+ border-radius: 20px;            /* 角を丸く */
+ padding: 12px;
+ box-shadow: 0 5px 15px rgba(255, 143, 171, 0.2); /* ピンクのふんわり影 */
+ transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* マウスを乗せたときにふわっと浮く */
+.product-list li:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 10px 25px rgba(255, 143, 171, 0.3);
+}
+
+/* 画像も丸くして可愛く */
+.product-list img {
+ border-radius: 15px;
+ width: 100%;
+ display: block;
+}
+
+/* タイトル（1行目のp）をピンクに */
+.product-list li p:first-of-type {
+ color: #ff8fab;
+ font-weight: bold;
+ margin-top: 8px;
+}
+
+/* 説明文（2行目のp）は少し薄めに */
+.product-list li p:last-of-type {
+ font-size: 14px;
+ color: #666;
 }
 
 /* メインの画像と文字を編集する */
@@ -36,11 +237,11 @@
 
 /* キャラの編集 */
 
-.robot-img {
+/* .robot-img {
   width: 700px;      /* 表示したい幅 */
-  height: 600px;     /* 表示したい高さ */
-  object-fit: contain; /* はみ出さず、比率維持 */
-}
+  /* height: 600px;     /* 表示したい高さ */
+  /* object-fit: contain; /* はみ出さず、比率維持 */
+/* }  */
 
 /* 画像の表示サイズを調整する */
 .product-list img{

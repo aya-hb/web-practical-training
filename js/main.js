@@ -1,22 +1,40 @@
+// ===== ローディングのパーセンテージ =====
+let percent = 0;
+const percentText = document.getElementById("percent");
+const loadingScreen = document.getElementById("loading");
+const mainContent = document.querySelector(".main");
+
+const interval = setInterval(() => {
+ percent++;
+ percentText.textContent = percent + "%";
+
+ if (percent >= 100) {
+   clearInterval(interval);
+
+   // ★★★ ここで確実に切り替え ★★★
+   loadingScreen.style.display = "none";
+   mainContent.classList.remove("hidden");
+ }
+}, 30);
 //main　ローディングされるたびに画像が切り替わる
 // const robot = document.querySelector(".robot");
 
-    window.addEventListener('load',()=>{
-        // robot.src=img/58n;//画像のソースを切り替え（ランダムで切り替え）
-            // 1. 画像のパスを配列に入れる
-        let images = [
-            '../img/Designer.png',
-            '../img/straight.png',
-            '../img/cry.png',
-            '../img/impressed.png',
-            '../img/Oko.png'
-        ];
-        // 2. 配列からランダムに画像URLを1つ取得
-        let randomImage = images[Math.floor(Math.random() * images.length)];
+    // window.addEventListener('load',()=>{
+    //     // robot.src=img/58n;//画像のソースを切り替え（ランダムで切り替え）
+    //         // 1. 画像のパスを配列に入れる
+    //     let images = [
+    //         '../img/Designer.png',
+    //         '../img/straight.png',
+    //         '../img/cry.png',
+    //         '../img/impressed.png',
+    //         '../img/Oko.png'
+    //     ];
+    //     // 2. 配列からランダムに画像URLを1つ取得
+    //     let randomImage = images[Math.floor(Math.random() * images.length)];
 
-        // 3. imgタグのsrc属性を書き換える
-        document.getElementById('random-img').src = randomImage;
-    });
+    //     // 3. imgタグのsrc属性を書き換える
+    //     document.getElementById('random-img').src = randomImage;
+    // });
 
     // console.log(images);//imagesが取れていない
     
@@ -73,6 +91,60 @@
     });
 // nav
 
+// カラムが流れ来るアニメーション
+const container = document.querySelector(".flow-container");
+const wrapper = document.querySelector(".flow-wrapper");
+const dots = document.querySelectorAll(".dot");
+
+const maxMove = 70; // 動く範囲
+
+// ===== マウス連動（いままでの動き） =====
+wrapper.addEventListener("mousemove", (e) => {
+  const rect = wrapper.getBoundingClientRect();
+  const mouseX = e.clientX - rect.left;
+  const center = rect.width / 2;
+
+  const ratio = (mouseX - center) / center;
+  const move = maxMove * ratio;
+
+  container.style.transform = `translateX(${move}px)`;
+
+  // ドットの更新
+  dots.forEach(d => d.classList.remove("active"));
+
+  if (ratio < -0.33) {
+    dots[0].classList.add("active"); // 左
+  } else if (ratio > 0.33) {
+    dots[2].classList.add("active"); // 右
+  } else {
+    dots[1].classList.add("active"); // 中央
+  }
+});
+
+// マウスが外れたら中央に戻す
+wrapper.addEventListener("mouseleave", () => {
+  container.style.transform = `translateX(0px)`;
+
+  dots.forEach(d => d.classList.remove("active"));
+  dots[1].classList.add("active");
+});
+
+// ===== ここから「クリックで動く」処理 =====
+dots.forEach((dot, i) => {
+  dot.addEventListener("click", () => {
+    dots.forEach(d => d.classList.remove("active"));
+    dot.classList.add("active");
+
+    // クリックした位置に移動
+    if (i === 0) {
+      container.style.transform = `translateX(${-maxMove}px)`; // 左
+    } else if (i === 2) {
+      container.style.transform = `translateX(${maxMove}px)`;  // 右
+    } else {
+      container.style.transform = `translateX(0px)`;           // 中央
+    }
+  });
+});
 // 画像にマウスが乗ったらその画像にあったホームページの詳細が表示される
 
 
