@@ -12,9 +12,14 @@
     --Pink:#ffc0cb;
     --oswald-font: "Oswald", sans-serif;
     }
-
-/* ここからindex.html */
-/* ===== ローディング画面 ===== */
+    
+    #header{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    }
+/* ここからindex.html============================================================================================== */
+/* ===== ローディング画面 ===================================== */
 .loading-screen {
  position: fixed;
  top: 0;
@@ -53,12 +58,176 @@
  font-weight: bold;
  letter-spacing: 1px;
 }
-/* メイン画像をグリッド表示にする */
-.site-title img{
-    width: 75%;
+
+/* ここまでがローディング画面======================================== */
+
+/* topにくる画像の編集 */
+/* ===== ここからがTopメインコンテンツ ==========================================*/
+header {
+ background: #ffb6c1;
+ color: white;
+ text-align: center;
+ padding: 40px 0;
+}
+section {
+ max-width: 800px;
+ margin: 40px auto;
+ padding: 20px;
+ background: white;
+ border-radius: 15px;
+ box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+.skills h2 {
+ color:var(--lightPink);
+}
+/* Aboutの+を編集 */
+/* .profile{
+    /* display:flex;
+    justify-content: space-between;
+    margin-right: auto; */
+/* } */ 
+.accordion-004 {
+    /* max-width: 500px; */
+    max-width: 80%;
+    margin-bottom: 7px;
+    margin-left: 0;
+    margin-left: 0;
+    border: 2px solid #ffdbee;
+    border-radius: 5px;
+    justify-content: center;
 }
 
-/* 横から流れてくるカラムの編集 */
+.accordion-004 summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 1em 2em;
+    color: #0f0000;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.accordion-004 summary::-webkit-details-marker {
+    display: none;
+}
+
+.accordion-004 summary::after {
+    transform: translateY(-25%) rotate(45deg);
+    width: 7px;
+    height: 7px;
+    margin-left: 10px;
+    border-bottom: 3px solid #0f0000b3;
+    border-right: 3px solid #0f0000b3;
+    content: '';
+    transition: transform .3s;
+}
+
+.accordion-004[open] summary::after {
+    transform: rotate(225deg);
+}
+
+.accordion-004 p {
+    transform: translateY(-10px);
+    opacity: 0;
+    margin: 0;
+    padding: .3em 2em 1.5em;
+    color: #000000;
+    transition: transform .5s, opacity .5s;
+}
+
+.accordion-004[open] p {
+    transform: none;
+    opacity: 1;
+}
+
+.accordion-center{
+    justify-content: center;
+    padding-left: 220px;
+    padding-top: 2rem;
+}
+
+/* ここまでがアコーディオンの編集 */
+.About-icon{
+    border-radius:60%;
+    background:var(--lightPink);
+    height: 30px;
+    width: 30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    cursor:pointer;
+}
+.skill-list {
+ display: flex;
+ gap: 10px;
+ flex-wrap: wrap;
+}
+.skill {
+ background: #ffd6e0;
+ padding: 10px 15px;
+ border-radius: 20px;
+}
+
+/* モーダルウィンドウの編集 */
+.modal-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s ease-out;
+  z-index: 9;
+}
+ 
+.modal-container::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+ 
+.modal-container.active {
+  opacity: 1;
+  visibility: visible;
+}
+ 
+.modal-body {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 500px;
+  width: 90%;
+}
+ 
+.modal-close {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  font-size: 14px;
+  color: #fff;
+  background: rgba(0,0,0,60%);
+  padding: 4px 15px;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+}
+ 
+.modal-content {
+  background: #fff;
+  border: 2px solid #000;
+  text-align: left;
+  padding: 30px;
+  font-weight: bold;
+}
+/* ===== ここまでがTopメインコンテンツ ==========================================*/
+
+/* ここからが横から流れてくるカラムの編集 */
 .flow-wrapper{
   width: 100%;
   overflow: hidden; /* ← PCで動かない原因はこれ */
@@ -115,10 +284,22 @@
   background: #f3c6d1; /* あなたのサイトのピンク寄り */
   transform: scale(1.2);
 }
-/* カラー（画像の雰囲気に寄せる） */
-.develop{ background:#f3c6d1; }
-.planning{ background:#e5e0ff; }
-.design{ background:#cde7e7; }
+/* カラムの画像差し込み */
+.develop{ 
+    background-image: url('../img/Profile.png');
+    background-position: center;
+    background-size: cover;
+}
+.planning{
+    background-image: url('../img/experience.png');
+    background-position:center;
+    background-size: cover;
+}
+.design{
+    background-image: url(../img/lifePlan.png);
+    background-position: center;
+    background-size: cover;
+}
 
 /* 番号 */
 .flow-card .num{
@@ -153,36 +334,41 @@
   font-weight:bold;
   cursor:pointer;
 }
-/* topにくる画像の編集 */
-/* ===== メインコンテンツ ===== */
-header {
- background: #ffb6c1;
- color: white;
- text-align: center;
- padding: 40px 0;
-}
-section {
- max-width: 800px;
- margin: 40px auto;
- padding: 20px;
- background: white;
- border-radius: 15px;
- box-shadow: 0 0 10px rgba(0,0,0,0.05);
-}
-h2 {
- color: #ff8fab;
-}
-.skill-list {
- display: flex;
- gap: 10px;
- flex-wrap: wrap;
-}
-.skill {
- background: #ffd6e0;
- padding: 10px 15px;
- border-radius: 20px;
+/* Aboutの編集 */
+/* ここまでが横から流れてくるカラムの編集================================= */
+
+/* ここからがcontentsの編集======================================================== */
+/* 各contentsに乗ったら画像を表示 モーダルウィンドウ */
+#modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+
+  /* 中央寄せ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* モーダル中身（中央に配置） */
+.modal-content{
+  background:white;
+  width:60%;
+  max-width: 700px;
+  min-width: 300px;
+  padding:20px;
+  position:relative;
+  border-radius: 12px; /* 角を少し丸く */
+}
+
+/* contentsの文字を変える */
+#top .profile{
+    color: var(--Pink);
+}
 /* 全体の並びはそのまま、見た目だけカード化 */
 .product-list {
 gap: 20px; /* カードのすき間を少し広げる */
@@ -226,23 +412,6 @@ list-style: none;
  color: #666;
 }
 
-/* メインの画像と文字を編集する */
-.main{
-    display: flex;
-}
-
-#top .profile{
-    color: var(--lightPink);
-}
-
-/* キャラの編集 */
-
-/* .robot-img {
-  width: 700px;      /* 表示したい幅 */
-  /* height: 600px;     /* 表示したい高さ */
-  /* object-fit: contain; /* はみ出さず、比率維持 */
-/* }  */
-
 /* 画像の表示サイズを調整する */
 .product-list img{
     width: 100%;
@@ -255,11 +424,7 @@ list-style: none;
     color: black;
 }
 
-#header{
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 0;
-}
+/* ここまでがcontentsの編集===================================================== */
 
 .wrapper{
     padding: 0px 50px;
@@ -287,18 +452,20 @@ list-style: none;
     display: block;
 }
 
-/* トーストの編集 */
-.toast{
+/* ここからがトーストの編集======================================================*/
+/* .toast{
     position: fixed;   /* 要素を画面に固定 */
-    bottom: 20px;      /* 下からの位置 */
-    right: 20px;       /* 右からの位置 */
-    z-index: 9999;     /* 他の要素より上に表示する */
-    border:1px solid black ;
+    /* bottom: 20px;      /* 下からの位置 */
+    /* right: 20px;       /* 右からの位置 */
+    /* z-index: 9999;     /* 他の要素より上に表示する */
+    /* border:1px solid black ;
     color: #ffc0cb;
-    border-radius: 15px;
-}
-/* ここまでindex.html */
-/* ここからitem.1 */
+    border-radius: 15px; */
+/* }  */
+/* ここまでがトーストの編集================================================================= */
+/* ここまでindex.html============================================================================================================================ */
+
+/* ここからitem.1======================================================================================= */
 .page-title{
     font-size: 1.2rem;
     padding-bottom: 2rem;
@@ -329,7 +496,9 @@ list-style: none;
     padding-left: 1rem;
 }
 
-/* companyの編集 */
+/* ここまでがitem1.htmlの編集============================================================= */
+
+/* ここからがcompanyの編集========================================================================================= */
 #company{
     max-width: 600px;
 }
@@ -397,10 +566,9 @@ table tr:last-child th{
         チェックボックスに適用されないようにする */
     border: 0;
 }
-/* ここまでcontactのデザイン */
-/* nav */
-/* スライドメニュー */
+/* ここまでcontactのデザイン============================================================================================= */
 
+/* ここからがnavのスライドバー======================================================================================================= */
 /* 開閉ボタン(共通部分) */
 .btn-menu{
   /* 右上に固定する */
@@ -485,8 +653,8 @@ table tr:last-child th{
   text-decoration: none;
   color:var(--light-grey);
 }
-/* nav */
-/* ここまでitem.1 */
+/* ここからがnavのスライドバー====================================================================================================================== */
+/* ここからがレスポンシブ対応========================================================================================================= */
 @media(max-width:600px){
     .product-list{
         display: grid;

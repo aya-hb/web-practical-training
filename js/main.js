@@ -1,4 +1,5 @@
-// ===== ローディングのパーセンテージ =====
+//========================================================== ここからindex.htmlの編集=====================================================================================
+// ===== ローディングのパーセンテージ ============================================================
 let percent = 0;
 const percentText = document.getElementById("percent");
 const loadingScreen = document.getElementById("loading");
@@ -16,7 +17,9 @@ const interval = setInterval(() => {
    mainContent.classList.remove("hidden");
  }
 }, 30);
-//main　ローディングされるたびに画像が切り替わる
+// ここまでがローディングのパーセンテージ===========================================================================
+
+//main　ローディングされるたびに画像が切り替わる=>仮で実装したので、もしかしたらこれから使う機会があるかもしれない
 // const robot = document.querySelector(".robot");
 
     // window.addEventListener('load',()=>{
@@ -43,7 +46,7 @@ const interval = setInterval(() => {
     // console.log('選ばれたURL:', el?.src, el?.currentSrc);
     // });デバック結果失敗
 
-// nav
+// navの編集==================================================================================================
     // 要素の取得
     const openBtn = document.querySelector("#menu-open");
     const closeBtn = document.querySelector("#menu-close");
@@ -89,9 +92,9 @@ const interval = setInterval(() => {
             menuOptions,
         );
     });
-// nav
+// ここまでがnav======================================================================================================
 
-// カラムが流れ来るアニメーション
+// カラムが流れ来るアニメーション=====================================================================================
 const container = document.querySelector(".flow-container");
 const wrapper = document.querySelector(".flow-wrapper");
 const dots = document.querySelectorAll(".dot");
@@ -109,7 +112,7 @@ wrapper.addEventListener("mousemove", (e) => {
 
   container.style.transform = `translateX(${move}px)`;
 
-  // ドットの更新
+  // ドットの編集======================================
   dots.forEach(d => d.classList.remove("active"));
 
   if (ratio < -0.33) {
@@ -121,7 +124,7 @@ wrapper.addEventListener("mousemove", (e) => {
   }
 });
 
-// マウスが外れたら中央に戻す
+// マウスが外れたら中央に戻す==============================
 wrapper.addEventListener("mouseleave", () => {
   container.style.transform = `translateX(0px)`;
 
@@ -129,7 +132,7 @@ wrapper.addEventListener("mouseleave", () => {
   dots[1].classList.add("active");
 });
 
-// ===== ここから「クリックで動く」処理 =====
+// ===== ここから「クリックで動く」処理 ===============
 dots.forEach((dot, i) => {
   dot.addEventListener("click", () => {
     dots.forEach(d => d.classList.remove("active"));
@@ -145,9 +148,8 @@ dots.forEach((dot, i) => {
     }
   });
 });
-// 画像にマウスが乗ったらその画像にあったホームページの詳細が表示される
-
-
+// 画像にマウスが乗ったらその画像にあったホームページの詳細が表示される=>これは実装したいけどできてない
+// contentsが交差したらアニメーションが発動する======================================
     //3.交差した時のanimation処理
     const fadeAnimation= (entries,obs)=>{
         //entriesは配列なので、Foreachで展開
@@ -184,3 +186,19 @@ dots.forEach((dot, i) => {
         //監視処理
         fadeObserver.observe(fadeIn);
     });
+
+    // 各contentにカーソルが乗れば、写真や詳細が出てくるって感じにする
+
+    const item1 =document.querySelector(".item1");
+
+    item1.addEventListener("mouseover",()=>{
+        insertAdjacentHTML(item1.html)
+    }
+    );
+
+    // モーダルウィンドウの編集
+    //要素を取得する
+    //マウスが乗ったら
+    //下からのにょきってでてくる感じにする
+    
+    //=======================================================ここまでindex.htmlの編集===========================================================================================================-
