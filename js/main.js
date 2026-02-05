@@ -1,22 +1,28 @@
 //========================================================== ここからindex.htmlの編集=====================================================================================
 // ===== ローディングのパーセンテージ ============================================================
-let percent = 0;
+// ===== ローディングのパーセンテージ ============================================================
 const percentText = document.getElementById("percent");
-const loadingScreen = document.getElementById("loading");
-const mainContent = document.querySelector(".main");
 
-const interval = setInterval(() => {
- percent++;
- percentText.textContent = percent + "%";
+// percentText（要素）が存在する場合だけ実行する
+if (percentText) {
+    let percent = 0;
+    const loadingScreen = document.getElementById("loading");
+    const mainContent = document.querySelector(".main");
 
- if (percent >= 100) {
-   clearInterval(interval);
-
-   // ★★★ ここで確実に切り替え ★★★
-   loadingScreen.style.display = "none";
-   mainContent.classList.remove("hidden");
- }
-}, 30);
+    const interval = setInterval(() => {
+        percent++;
+        percentText.textContent = percent + "%";
+        
+        // 100%になったら止める処理などが続く...
+        if (percent >= 100) {
+            clearInterval(interval);
+            // ② ローディング画面を非表示にする
+        // loadingScreen は document.getElementById("loading") で取得したもの
+        loadingScreen.style.opacity = '0';          // ふわっと消す（CSSでtransitionがある場合）
+        loadingScreen.style.visibility = 'hidden'; // クリックを通るようにする
+        }
+    }, 17);
+}
 // ここまでがローディングのパーセンテージ===========================================================================
 
 //main　ローディングされるたびに画像が切り替わる=>仮で実装したので、もしかしたらこれから使う機会があるかもしれない
@@ -48,50 +54,57 @@ const interval = setInterval(() => {
 
 // navの編集==================================================================================================
     // 要素の取得
-    const openBtn = document.querySelector("#menu-open");
-    const closeBtn = document.querySelector("#menu-close");
-    const menuPanel = document.querySelector("#menu-panel");
-    const menuLists = document.querySelectorAll(".menu-list li");
+    // const openBtn = document.querySelector("#menu-open");
+    // const closeBtn = document.querySelector("#menu-close");
+    // const menuPanel = document.querySelector("#menu-panel");
+    // const menuLists = document.querySelectorAll(".menu-list li");
     
-    // メニュー全体で使いまわすタイミングオプション
-    const menuOptions = {
-        duration:1400,
-        easing:"ease",
-        fill:"forwards",
-    };
+    // // メニュー全体で使いまわすタイミングオプション
+    // const menuOptions = {
+    //     duration:1400,
+    //     easing:"ease",
+    //     fill:"forwards",
+    // };
     
-    //メニューを開く処理
-    openBtn.addEventListener('click',()=>{
-        menuPanel.animate(
-            {
-                translate:["100vw",0]
-            },
-            menuOptions,
-        );
-        // listの内容を一つずつ表示する
-        menuLists.forEach((menuList,index)=>{
-            menuList.animate({
-                opacity:[0,1],
-                translate:['2rem',0]
-            },
-            {
-                duration:2400,
-                delay: 500* index,
-                easing:'ease',
-                fill:'forwards'
-            },
-            );
+    // //メニューを開く処理
+    // openBtn.addEventListener('click',()=>{
+    //     menuPanel.animate(
+    //         {
+    //             translate:["100vw",0]
+    //         },
+    //         menuOptions,
+    //     );
+    //     // listの内容を一つずつ表示する
+    //     menuLists.forEach((menuList,index)=>{
+    //         menuList.animate({
+    //             opacity:[0,1],
+    //             translate:['2rem',0]
+    //         },
+    //         {
+    //             duration:2400,
+    //             delay: 500* index,
+    //             easing:'ease',
+    //             fill:'forwards'
+    //         },
+    //         );
+    //     });
+    // });
+    // // メニューを閉じる
+    // closeBtn.addEventListener('click',()=>{
+    //     menuPanel.animate(
+    //         {
+    //             translate:[0,"100vw"]
+    //         },
+    //         menuOptions,
+    //     );
+    // });
+    const toggle = document.getElementById('js-nav-toggle');
+        const menu = document.getElementById('js-nav-menu');
+
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('active');
+            menu.classList.toggle('active');
         });
-    });
-    // メニューを閉じる
-    closeBtn.addEventListener('click',()=>{
-        menuPanel.animate(
-            {
-                translate:[0,"100vw"]
-            },
-            menuOptions,
-        );
-    });
 // ここまでがnav======================================================================================================
 
 // カラムが流れ来るアニメーション=====================================================================================
@@ -225,9 +238,5 @@ dots.forEach((dot, i) => {
             $('#modal-container').fadeOut();
         }
     });
-});
-    //要素を取得する
-    //マウスが乗ったら
-    //下からのにょきってでてくる感じにする
-    
-    //=======================================================ここまでindex.htmlの編集===========================================================================================================-
+    });
+//=======================================================ここまでindex.htmlの編集===========================================================================================================-

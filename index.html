@@ -5,7 +5,8 @@
         <title>Portfolio</title>
         <meta name ="description" content ='家具の紹介ページ'>
         <!-- pcとスマホを切り替えるために必ず必要なコード -->
-        <meta name ='viewport' content="width=device-width",initial-scale='1'>
+        <meta name ='viewport' content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <!-- ★=改造する時に触りたい！ -->
         <link rel="icon" href="img/fabicon_1-3.png">
         <!-- cssリセット　ブラウザによってcssがずれないようにするためのもの-->
@@ -45,11 +46,11 @@
             </section> -->
             <div class="accordion-center">
                 <details class="accordion-004">
-                    <summary>これはどのようなテンプレートですか？</summary>
+                    <summary>サイト概要</summary>
                     <p>枠線付きのシンプルなアコーディオンメニューです。</p>
                 </details>
                 <details class="accordion-004">
-                    <summary>どのような特徴がありますか？</summary>
+                    <summary>このサイトのこだわり</summary>
                     <p>クセがなく、どんなサイトでも使いやすい汎用性があります。</p>
                 </details>
             </div>
@@ -66,32 +67,18 @@
         </div>
         <header id="header" class="wrapper">
             <div class="main">
-                <nav>
-                    <!-- 開くボタン -->
-                    <button type="button" id="menu-open" class="btn-menu">
-                        <!-- ハンバーガ用の三本線 -->
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <div id="menu-panel">
-                        <!-- 開いている状態 -->
-                        <!-- 閉じるボタン -->
-                        <button type="button" id="menu-close" class="btn-menu">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-                        <!-- navの中身 -->
-                        <!-- ▲aの閉じがなかった！ -->
-                        <ul  class="menu-list">
-                            <li><a href="#">1</a></li>
-                            <li><a href="company.html">company</a></li>
-                            <li><a href="#">Product</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
+                <button class="nav-toggle" id="js-nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="nav-menu" id="js-nav-menu">
+                    <ul>
+                        <li><a href="profile.html">Profile<span>プロフィール</span></a></li>
+                        <li><a href="experience.html">Story<span>これまでの経験</span></a></li>
+                        <li><a href="life.html">Future<span>人生設計</span></a></li>
+                        <li><a href="contact.html">Contact<span>お問い合わせ</span></a></li>
+                    </ul>
                 </nav>
             </div>
         </header>
@@ -127,7 +114,8 @@
                 </h1>
                 <ul class="product-list fadeIn">
                         <li data-title="生徒会活動:高校時代" 
-                            data-text="高校二年生で生徒会を務めました。リーダーシップを学びました。" 
+                            data-text="高校二年生では、生徒会長を務め、自身が掲げた公約を実現する事ができました。
+                                        生徒会長を務める中で、スケジュール管理能力や、統率力、最後までやり切る力を身につける事ができました。" 
                             data-img="img/1_Seitokai.jpg"> <a href="#">
                                 <div class="item1">
                                     <p>生徒会活動:高校時代</p>
@@ -135,24 +123,27 @@
                             </a>
                         </li>                        
                         <li data-title="グループ活動" 
-                            data-text="高校二年生で生徒会を務めました。リーダーシップを学びました。" 
-                            data-img="img/school_activity.jpg"> <a href="#">
+                            data-text="「SNSのフォロワーを増やすための施策」というテーマをグループで考えました。
+                                        2か月以内に成果物を出し、班員の意見をまとめるリーダーとして活躍しました。" 
+                            data-img="img/2_Group.jpeg"> <a href="#">
                                 <div class="item2">
                                     <p>グループ活動</p>
                                 </div>
                             </a>
                         </li>
                         <li data-title="プログラミング" 
-                            data-text="高校二年生で生徒会を務めました。リーダーシップを学びました。" 
-                            data-img="img/school_activity.jpg"> <a href="#">
+                            data-text="HTML,CSS,JavaScriptを学んでいます。
+                                        基本情報技術者試験の問題をJavaScriptでコーディングしたり、コード模写を行ったりしました。" 
+                            data-img="img/3_Proguraminngu.jpeg"> <a href="#">
                                 <div class="item3">
                                     <p>プログラミング</p>
                                 </div>
                             </a>
                         </li>
                         <li data-title="自分の長所" 
-                            data-text="高校二年生で生徒会を務めました。リーダーシップを学びました。" 
-                            data-img="img/school_activity.jpg"> <a href="#">
+                            data-text="周りを巻き込む力です。特にリーダーを務めているときに発揮されます。
+                                        自分の行動力と一人一人にそった話方を武器に自信が掲げた目標を実現してきました。" 
+                            data-img="img/4_Tyousyo.jpg"> <a href="#">
                                 <div class="item4">
                                     <p>自分の長所</p>
                                 </div>
@@ -160,7 +151,7 @@
                         </li>
                         <li data-title="してみたいこと" 
                             data-text="高校二年生で生徒会を務めました。リーダーシップを学びました。" 
-                            data-img="img/school_activity.jpg"> <a href="#">
+                            data-img="img/5_Sky.jpeg"> <a href="#">
                                 <div class="item5">
                                     <p>してみたいこと</p>
                                 </div>
@@ -168,15 +159,15 @@
                         </li>
                         <li data-title="将来の展望" 
                             data-text="高校二年生で生徒会を務めました。リーダーシップを学びました。" 
-                            data-img="img/school_activity.jpg"> <a href="#">
-                                <div class="item5">
+                            data-img="img/6_Projekuto.jpeg"> <a href="#">
+                                <div class="item6">
                                     <p>将来の展望</p>
                                 </div>
                             </a>
                         </li>
                         <li data-title="将来の展望:二年生に向けて" 
                             data-text="高校二年生で生徒会を務めました。リーダーシップを学びました。" 
-                            data-img="img/school_activity.jpg"> <a href="#">
+                            data-img="img/7_Apuri.png"> <a href="#">
                                 <div class="item7">
                                     <p>将来の展望：二年生に向けて</p>
                                 </div>
@@ -184,7 +175,7 @@
                         </li>
                         <li data-title="アルバイト" 
                             data-text="高校二年生で生徒会を務めました。リーダーシップを学びました。" 
-                            data-img="img/school_activity.jpg"> <a href="#">
+                            data-img="img/8_Amamiku1.jpg"> <a href="#">
                                 <div class="item8">
                                     <p>アルバイト</p>
                                 </div>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang ="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>人生設計</title>
+        <meta name ="description" content ='家具の紹介ページ'>
+        <!-- pcとスマホを切り替えるために必ず必要なコード -->
+        <meta name ='viewport' content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <!-- ★=改造する時に触りたい！ -->
+        <link rel="icon" href="img/favicon.ico">
+        <!-- cssリセット　ブラウザによってcssがずれないようにするためのもの-->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <!-- cssの読み込み -->
+        <link rel="stylesheet" href="css/style.css">
+        <!--JQUERY-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/main.js" defer></script>
+    </head>
+    <body>
+                <!-- !-- ===== メインコンテンツtop（最初は非表示） ===== -->
+        <div id="main-content" class="hidden">
+            <header>
+                <h1><a>Profile</a></h1>
+                <p>自己紹介ページです</p>
+            </header>
+        </div>
+        <header id="header" class="wrapper">
+            <div class="main">
+                <button class="nav-toggle" id="js-nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="nav-menu" id="js-nav-menu">
+                    <ul>
+                         <li><a href="index.html">TOP<span>TOPページへ</span></a></li>
+                        <li><a href="profile.html">Profile<span>プロフィール</span></a></li>
+                        <li><a href="experience.html">Story<span>これまでの経験</span></a></li>
+                        <li><a href="life.html">Future<span>人生設計</span></a></li>
+                        <li><a href="contact.html">Contact<span>お問い合わせ</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </body>
+</html>
