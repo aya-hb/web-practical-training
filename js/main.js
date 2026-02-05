@@ -189,14 +189,43 @@ dots.forEach((dot, i) => {
 
     // 各contentにカーソルが乗れば、写真や詳細が出てくるって感じにする
 
-    const item1 =document.querySelector(".item1");
+    // const item1 =document.querySelector(".item1");
 
-    item1.addEventListener("mouseover",()=>{
-        insertAdjacentHTML(item1.html)
-    }
-    );
+    // item1.addEventListener("mouseover",()=>{
+    //     insertAdjacentHTML(item1.html)
+    // }
+    // );
 
     // モーダルウィンドウの編集
+    $(function() {
+    $('.product-list li').on('click', function(e) {
+        e.preventDefault();
+
+        // データの取得
+        const title = $(this).attr('data-title');
+        const text = $(this).attr('data-text');
+        const imgPath = $(this).attr('data-img'); // 画像パスを取得
+
+        // 流し込み
+        $('#modal-title').text(title);
+        $('#modal-desc').text(text);
+        
+        // 画像の処理：パスがあれば表示、なければ隠す
+        if(imgPath) {
+            $('#modal-img').attr('src', imgPath).show();
+        } else {
+            $('#modal-img').hide();
+        }
+
+        $('#modal-container').fadeIn();
+    });
+
+    $('.close-btn, #modal-container').on('click', function(e) {
+        if (e.target === this || $(e.target).hasClass('close-btn')) {
+            $('#modal-container').fadeOut();
+        }
+    });
+});
     //要素を取得する
     //マウスが乗ったら
     //下からのにょきってでてくる感じにする
