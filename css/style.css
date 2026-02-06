@@ -11,6 +11,7 @@
     --lightPink:#ffb6c1;
     --Pink:#ffc0cb;
     --oswald-font: "Oswald", sans-serif;
+    --font-rounded: "M PLUS Rounded 1c", sans-serif;
     }
     
     #header{
@@ -98,9 +99,20 @@ section {
     margin-bottom: 7px;
     margin-left: 0;
     margin-left: 0;
-    border: 2px solid #ffdbee;
-    border-radius: 5px;
+    /* border: 2px solid #ffdbee; */
+    border-radius: 20px;
     justify-content: center;
+}
+
+.accordion-img1{
+    background-image: url(../img/accordion4.png);
+    object-fit: cover;
+    object-position: center;
+}
+.accordion-img2{
+    background-image: url(../img/accordion3.png);
+    object-fit: cover;
+    object-position: center;
 }
 
 .accordion-004 summary {
@@ -192,9 +204,13 @@ section {
   z-index: 9;
 }
  
+#modal-container{
+    background-color:var(--main-pink);
+}
 #modal-title{
     color: var(--lightPink);
     font-family: var(--oswald-font);
+    /* font-family: var(--font-rounded); */
 }
 .modal-container::before {
   content: "";
@@ -230,11 +246,12 @@ section {
  
 .modal-content {
   background: #fff;
-  border: 2px solid var(--Pink);
+  border: 3px solid var(--Pink);
   text-align: left;
   padding: 30px;
   font-weight: bold;
 }
+
 /* ===== ここまでがTopメインコンテンツ ==========================================*/
 
 /* ここからが横から流れてくるカラムの編集 */
@@ -757,7 +774,36 @@ table tr:last-child th{
             margin-top: 5px;
             color: var(--accent-pink);
         }
-/* ここからがnavのスライドバー====================================================================================================================== */
+
+/* --------------------------------------------profileの編集------------------------------------ */
+        .profile-main{
+            padding-left: 100px;
+            max-width: 100%;
+            display: flex;
+        }
+
+        .main-left{
+            max-width:30%;
+        }
+
+        .main-right{
+            max-width: 70%;
+        }
+        .profile-word{
+            padding-left: 200px;
+            padding-top: 3rem;
+        }
+
+        .main-right p{
+            font-size: 20px;
+            border-bottom: 1px solid var(--main-pink);
+            letter-spacing: 0.1em; /* 文字間隔を0.1文字分広げる */
+        }
+
+        .profile-word{
+            padding-left: 200px;
+        }
+        /* ここからがnavのスライドバー====================================================================================================================== */
 /* ここからがレスポンシブ対応========================================================================================================= */
 @media(max-width:600px){
     .product-list{
