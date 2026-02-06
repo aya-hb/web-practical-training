@@ -115,36 +115,40 @@ const dots = document.querySelectorAll(".dot");
 const maxMove = 70; // 動く範囲
 
 // ===== マウス連動（いままでの動き） =====
-wrapper.addEventListener("mousemove", (e) => {
-  const rect = wrapper.getBoundingClientRect();
-  const mouseX = e.clientX - rect.left;
-  const center = rect.width / 2;
+// wrapperが存在するか確認するif文を追加
+// ===== マウス連動（いままでの動き） =====
+if (wrapper) { // ← ここから開始
+    
+    // マウスが動いた時
+    wrapper.addEventListener("mousemove", (e) => {
+        const rect = wrapper.getBoundingClientRect();
+        const mouseX = e.clientX - rect.left;
+        const center = rect.width / 2;
 
-  const ratio = (mouseX - center) / center;
-  const move = maxMove * ratio;
+        const ratio = (mouseX - center) / center;
+        const move = maxMove * ratio;
 
-  container.style.transform = `translateX(${move}px)`;
+        container.style.transform = `translateX(${move}px)`;
 
-  // ドットの編集======================================
-  dots.forEach(d => d.classList.remove("active"));
+        dots.forEach(d => d.classList.remove("active"));
 
-  if (ratio < -0.33) {
-    dots[0].classList.add("active"); // 左
-  } else if (ratio > 0.33) {
-    dots[2].classList.add("active"); // 右
-  } else {
-    dots[1].classList.add("active"); // 中央
-  }
-});
+        if (ratio < -0.33) {
+            dots[0].classList.add("active");
+        } else if (ratio > 0.33) {
+            dots[2].classList.add("active");
+        } else {
+            dots[1].classList.add("active");
+        }
+    });
 
-// マウスが外れたら中央に戻す==============================
-wrapper.addEventListener("mouseleave", () => {
-  container.style.transform = `translateX(0px)`;
+    // マウスが外れたら（これもifの中に移動！）
+    wrapper.addEventListener("mouseleave", () => {
+        container.style.transform = `translateX(0px)`;
+        dots.forEach(d => d.classList.remove("active"));
+        dots[1].classList.add("active");
+    });
 
-  dots.forEach(d => d.classList.remove("active"));
-  dots[1].classList.add("active");
-});
-
+} // ← ここでifを閉じる
 // ===== ここから「クリックで動く」処理 ===============
 dots.forEach((dot, i) => {
   dot.addEventListener("click", () => {
