@@ -610,19 +610,22 @@ list-style: none;
 }
 
 table th,td {
-    border-bottom: 1px solid #c0c0c0; /* 線の太さ、種類、色 */
+    border-bottom: 3px solid white; /* 線の太さ、種類、色 */
     line-height: 3;
     padding: 10px;
     font-size: 15px;
+    padding-bottom: 5px; /* 線と文字の距離 */
+    padding-left: 100px; /* 左へ長さを追加 */
+    padding-right: 100px; /* 右へ長さを追加 */
 }
 
-table tr:last-child td{
+/* table tr:last-child td{
     border-bottom: none;
     line-height: 2;
 }
 table tr:last-child th{
     border-bottom: none;
-}
+} */
 .map{
     padding-top: 2rem;
     padding-bottom: 2rem;
