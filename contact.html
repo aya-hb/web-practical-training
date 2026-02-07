@@ -19,43 +19,19 @@
     <body>
         <header id="header" class="wrapper">
             <div class="main">
-                <h1 class="site-title">
-                    <a href="index.html"><!--★-->
-                        <img src="img/title.png" width="700px" height="auto" alt="Furniture Design">
-                    </a>
-                </h1>
-                <!-- キャラクター表示 -->
-                <div class="robot">
-                    <img src="img/Designer.png" width="600px" height="700px" alt="ロボット">
-                </div>
-            </div>
-        <nav>
-            <!-- 開くボタン -->
-            <button type="button" id="menu-open" class="btn-menu">
-                <!-- ハンバーガ用の三本線 -->
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-                <div id="menu-panel">
-                    <!-- 開いている状態 -->
-                    <!-- 閉じるボタン -->
-                    <button type="button" id="menu-close" class="btn-menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <!-- navの中身 -->
-                    <!-- ▲aの閉じがなかった！ -->
-                    <ul  class="menu-list">
-                        <li><a href="#">1</a></li>
-                        <li><a href="company.html">company</a></li>
-                        <li><a href="#">Product</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                <button class="nav-toggle" id="js-nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="nav-menu" id="js-nav-menu">
+                    <ul>
+                        <li><a href="profile.html">Profile<span>プロフィール</span></a></li>
+                        <li><a href="experience.html">Story<span>これまでの経験</span></a></li>
+                        <li><a href="life.html">Future<span>人生設計</span></a></li>
+                        <li><a href="contact.html">Contact<span>お問い合わせ</span></a></li>
                     </ul>
-                </div>
-            </nav>
+                </nav>
         </header>
         <main>
             <div class="contact wrapper">
@@ -75,37 +51,6 @@
                     <br>
                     <p>年齢</p>
                         <input type="number" min="0" max="100" name="age" placeholder="25歳">
-                    <br>
-                    <br>
-                    <P>性別</P>
-                        <label><input type="radio" name="male" checked>男性</label>
-                        <label><input type="radio" name="female">女性</label>
-                        <label><input type="radio" name="other">その他</label>
-                    <br>
-                    <br>
-                    <p>お問い合わせ種別</p>
-                        <select name="selects">
-                            <option value="">修理・サポート</option>
-                            <option value="">商品について</option>
-                            <option value="">取材</option>
-                            <option value="">採用</option>
-                            <option value="">その他</option>
-                        </select>
-                    <br>
-                    <br>
-                    <p>興味のある商品(複数可)</p>
-                        <input type="checkbox" checked>
-                        <label>チェア</label>
-                        <input type="checkbox">
-                        <label>テーブル</label>
-                        <input type="checkbox">
-                        <label>ソファ</label>
-                        <input type="checkbox">
-                        <label>照明</label>
-                    <br>
-                    <br>
-                    <p>希望納期</p>
-                        <input type="date">
                     <br>
                     <br>
                     <p>添付ファイル</p>
