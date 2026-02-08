@@ -100,6 +100,25 @@ section {
  border-radius: 15px;
  box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
+
+/* --------------------------------------------index.html------------------------- */
+/* 動画を挿入 */
+.main-video{
+    object-fit: cover;
+}
+
+.top-mesaage{
+    justify-content: center;
+    padding-left: 150px;
+}
+
+.top-mesaage h1{
+    color: var(--lightPink);
+}
+
+.top-mesaage p{
+    font-weight: bold;
+}
 /* スキルセクション全体の調整 */
 .skills {
   text-align: center;
@@ -693,8 +712,8 @@ table th,td {
     padding: 10px;
     font-size: 15px;
     padding-bottom: 5px; /* 線と文字の距離 */
-    padding-left: 100px; /* 左へ長さを追加 */
-    padding-right: 100px; /* 右へ長さを追加 */
+    padding-left: 90px; /* 左へ長さを追加 */
+    padding-right: 40px; /* 右へ長さを追加 */
 }
 
 /* table tr:last-child td{
