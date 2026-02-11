@@ -114,11 +114,15 @@ section {
 
 .top-mesaage h1{
     color: var(--lightPink);
+    font-size: 40px;
+    padding-left: 400px;
 }
 
-.top-mesaage p{
-    font-weight: bold;
+.top-mesaage u{
+    padding-left: 400px;
+    font-size: 30px;
 }
+
 /* スキルセクション全体の調整 */
 .skills {
   text-align: center;
@@ -913,7 +917,10 @@ table tr:last-child th{
     max-width: 650px;
 }
 
-/*  */
+/* lifeの編集 */
+.life-title{
+    text-align: center;
+}
 
 /* ここからがレスポンシブ対応========================================================================================================= */
 @media(max-width:600px){
