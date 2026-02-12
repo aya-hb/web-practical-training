@@ -40,7 +40,12 @@
     width: 100%;
     max-width: 1200px; /* 画面がこれ以上大きくなっても中身は広がらない */
     margin: 0 auto;    /* 左右中央寄せ */
-}
+    }
+
+    h1,h2,p{
+        font-family: var(--oswald-font);
+    }
+
 /* ここからindex.html============================================================================================== */
 /* ===== ローディング画面 ===================================== */
 .loading-screen {
@@ -625,16 +630,6 @@ list-style: none;
     margin-bottom: 3.5rem;
 }
 
-.menu{
-    display:flex;
-    gap:20px;
-    margin: 20px 0;
-}
-
-.menu li{
-    list-style: none;
-}
-
 .link-text{
     text-align: center;
     margin-top: 40px;
@@ -642,7 +637,81 @@ list-style: none;
     text-decoration: none;
     display: block;
 }
+/*  フッターの編集 */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap');
 
+/* --- 親要素の設定 --- */
+#footer .footer-img {
+    position: relative; /* 子要素の基準点にする */
+    width: 100%;        /* 親は100%に固定 */
+    height: 400px;      /* 指定の高さを維持 */
+    overflow: hidden;   /* 120%の画像のはみ出しをカット */
+}
+
+#footer .footer-img img {
+    width: 120%;        /* 画像自体を大きく表示 */
+    height: 100%;
+    object-fit: cover;  /* 縦横比を保ちつつエリアを埋める */
+    display: block;
+}
+
+/* --- ボタンとリストの配置 --- */
+/* ボタンとナビをまとめて管理するために、絶対配置を調整します */
+
+.contact-button {
+    position: absolute;
+    top: 100px;         /* 上からの位置（青い円の高さに合わせて調整） */
+    right: 15%;         /* 画面の右端からの距離（左すぎるなら数字を小さく） */
+    
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    color: #a78bfa;
+    padding: 12px 35px;
+    background-color: #ffffff;
+    border: 2px solid #ddd6fe;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(167, 139, 250, 0.3);
+    text-decoration: none;
+    z-index: 10;
+}
+
+.nav-p {
+    position: absolute;
+    top: 160px;         /* ボタンのすぐ下の位置に設定 */
+    right: 15%;         /* ボタンのrightと同じ数値にすることで左端が揃います */
+    z-index: 10;
+}
+
+/* --- リストを縦並びにする --- */
+.nav-p ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* 縦並びにする */
+    align-items: flex-start; /* 文字の開始位置を左に揃える */
+}
+
+.nav-p li {
+    margin-bottom: 20px; /* 文字同士の上下の間隔 */
+}
+
+.nav-p li a {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    color: #ffffff;     /* 白文字 */
+    text-shadow: 2px 2px 2px plum;
+    text-decoration: none;
+    text-transform: uppercase; /* 大文字にする（Oswaldに合います） */
+    display: block;
+    transition: opacity 0.3s;
+}
+
+.nav-p li a:hover {
+    opacity: 0.7;
+}
+  /* SNSメニュー（ボタンのすぐ下） */
+  
 /* ここからがトーストの編集======================================================*/
 /* .toast{
     position: fixed;   /* 要素を画面に固定 */
@@ -710,7 +779,7 @@ list-style: none;
     font-weight: normal;
 }
 
-table th,td {
+.main-right table th,td {
     border-bottom: 3px solid white; /* 線の太さ、種類、色 */
     line-height: 3;
     padding: 10px;
@@ -922,6 +991,11 @@ table tr:last-child th{
     text-align: center;
 }
 
+.main-colums td,th{
+    padding-top: 90px;
+    padding-bottom: 100px;
+}
+/* ここまで experienceの編集*/
 /* ここからがレスポンシブ対応========================================================================================================= */
 @media(max-width:600px){
     .product-list{
