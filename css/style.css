@@ -780,7 +780,7 @@ list-style: none;
 }
 
 .main-right table th,td {
-    border-bottom: 3px solid white; /* 線の太さ、種類、色 */
+    border-bottom: 3px dotted white; /* 線の太さ、種類、色 */
     line-height: 3;
     padding: 10px;
     font-size: 15px;
@@ -970,7 +970,7 @@ table tr:last-child th{
 
         .main-right p{
             font-size: 20px;
-            border-bottom: 1px solid var(--main-pink);
+            /* border-bottom: 1px solid var(--main-pink); */
             letter-spacing: 0.1em; /* 文字間隔を0.1文字分広げる */
         }
 
@@ -991,9 +991,40 @@ table tr:last-child th{
     text-align: center;
 }
 
+.main-flex{
+    display: flex;
+}
+.main-colums{
+    /* visibility: hidden; */
+        display: none;
+}
 .main-colums td,th{
     padding-top: 90px;
     padding-bottom: 100px;
+}
+
+.divArea{
+    display: grid;
+    grid-template-columns: repeat(2,300px);
+    grid-auto-rows: auto;
+    gap: 10px;
+}
+
+.main-about{
+    margin-left: 30px;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: auto;
+    height: 450px;
+    border: 3px solid var(--lightPink); /* 線の太さ、種類、色 */
+    border-radius: 30px;
+    background-color: transparent; /* 背景を透明に */
+}
+
+.main-article{
+    padding-left: 60px;
+    padding-right: 60px;
 }
 /* ここまで experienceの編集*/
 /* ここからがレスポンシブ対応========================================================================================================= */

@@ -8,3 +8,25 @@
     About Meの文を考えなきゃいけないなって思う。
     モーダルウィンドウ
     アコーディオンに画像を差し込みたい
+
+    // 画像ギャラリー
+    const mainImage = document.querySelector('.diverea');
+    const thumbImage = document.querySelectorAll('.main-colums img');
+
+    //サムネイル画像群にループ処理
+    thumbImage.forEach((image)=>{
+        //マウスが乗った時にメイン画像のソースをマウスが乗った画像のソースに書き換え
+        image.addEventListener('mouseover',(event)=>{
+            //ソース書き換え処理
+            mainImage.innerText=event.target.id;
+            //アニメーション
+            mainImage.animate(
+            {
+                opacity:[0,1]
+            },
+            {
+                duration:1000
+            }
+            );
+        });
+    });

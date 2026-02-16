@@ -244,3 +244,28 @@ dots.forEach((dot, i) => {
     });
     });
 //=======================================================ここまでindex.htmlの編集===========================================================================================================-
+// ====================================================ここからがexperience.htmlの編集===================================================================
+
+    // 1. 「.diverea の中の img」をすべて取得する
+const images = document.querySelectorAll('.divArea img');
+const mainExplanation = document.querySelector('.main-about');
+
+images.forEach((image) => {
+    image.addEventListener('mouseover', (event) => {
+        // A. マウスが乗った画像の「id」と同じクラス名を持つ要素を、下のエリアから探す
+        const targetId = event.target.id; 
+        const originalText = document.querySelector(`.${targetId}`);
+
+        if (originalText) {
+            // B. 右側のエリア(main-about)に、その内容をコピーして表示
+            mainExplanation.innerHTML = originalText.innerHTML;
+        }
+        // C. アニメーション（画像がふわっとする）
+        event.target.animate(
+            { opacity: [0, 1] },
+            { duration: 1000 }
+        );
+    });
+});
+
+//=================================================== ここまでがexperience.html==================================
