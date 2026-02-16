@@ -263,7 +263,7 @@ images.forEach((image) => {
         // C. アニメーション（画像がふわっとする）
         event.target.animate(
             { opacity: [0, 1] },
-            { duration: 1000 }
+            { duration: 700 }
         );
     });
 });

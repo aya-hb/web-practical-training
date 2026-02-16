@@ -46,6 +46,9 @@
         font-family: var(--oswald-font);
     }
 
+    h1{
+        font-size: 10rem;
+    }
 /* ここからindex.html============================================================================================== */
 /* ===== ローディング画面 ===================================== */
 .loading-screen {
@@ -787,6 +790,7 @@ list-style: none;
     padding-bottom: 5px; /* 線と文字の距離 */
     padding-left: 50px; /* 左へ長さを追加 */
     padding-right: 20px; /* 右へ長さを追加 */
+    
 }
 
 /* table tr:last-child td{
@@ -965,7 +969,7 @@ table tr:last-child th{
         .profile-word{
             padding-left: 200px;
             padding-top: 3rem;
-            padding-bottom: 200px;
+            padding-bottom: 50px;
         }
 
         .main-right p{
@@ -1016,7 +1020,7 @@ table tr:last-child th{
     padding-left: 30px;
     padding-right: 30px;
     width: auto;
-    height: 450px;
+    height: 470px;
     border: 3px solid var(--lightPink); /* 線の太さ、種類、色 */
     border-radius: 30px;
     background-color: transparent; /* 背景を透明に */
