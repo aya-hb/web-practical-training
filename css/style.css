@@ -13,7 +13,7 @@
     --oswald-font: "Oswald", sans-serif;
     --font-rounded: "M PLUS Rounded 1c",serif;
     }
-    
+
     #header{
     display: flex;
     justify-content: space-between;
@@ -1091,81 +1091,355 @@ table tr:last-child th{
 }
 /* ここまで experienceの編集*/
 /* ここからがレスポンシブ対応========================================================================================================= */
-@media(max-width:600px){
-    .product-list{
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        gap:20px
-    }
-    .product-list img{
-        height:200px;
-        width: auto;
-
-    }
-    .product-list p{
-        font-size: 0.8rem;
-        line-height: 1.4;
-        margin-top: 6px;
-    }
-    .wrapper{
-    padding: 0px 50px;
-    /* max-width: 100%; */
-    /* display:flex; */
-    justify-content: space-between;
+/* タブレット（768px以下） */
+@media (max-width: 768px) {
+    
+    /* ===== ヘッダー ===== */
+    header {
+        padding: 40px 15px;
     }
     
-    .site-title img{
-        font-size:0.6rem;
+    header h1 {
+        font-size: 2rem;
     }
-
-    .page-title{
-        font-weight: normal;
-        font-size: 0.9rem;
+    
+    /* ===== Wrapper ===== */
+    .wrapper {
+        padding: 0 20px;
     }
-    .item{
-        display: flex;
+    
+    /* ===== トップメッセージ ===== */
+    .top-mesaage h1 {
+        font-size: 2.5rem;
+        padding-left: 20px;
+    }
+    
+    .top-mesaage u {
+        padding-left: 20px;
+        font-size: 1.2rem;
+    }
+    
+    /* ===== スキルリスト ===== */
+    .skill-list {
+        justify-content: center;
+    }
+    
+    .skill {
+        font-size: 14px;
+        padding: 6px 15px;
+    }
+    
+    /* ===== アコーディオン ===== */
+    .accordion-center {
+        padding: 10px;
+    }
+    
+    .accordion-004 summary {
+        padding: 12px 15px;
+        font-size: 16px;
+    }
+    
+    /* ===== 製品リスト（カード） ===== */
+    .product-list {
+        grid-template-columns: repeat(2, 1fr); /* 2列に */
+        gap: 15px;
+    }
+    
+    .product-list img {
+        height: 25vh;
+    }
+    
+    /* ===== フローカード ===== */
+    .flow-card {
+        min-width: 250px;
+        height: 320px;
+    }
+    
+    /* ===== プロフィール ===== */
+    .profile {
+        padding-left: 20px;
+    }
+    
+    .profile-main {
+        padding-left: 20px;
         flex-direction: column;
-        gap: 2rem;
     }
-    .item .item-image{
-    width:100%;
-    }
-
-    .item .item-text{
-        width: 100%;
-    }
-
-    .item .item-text p{
-    padding-bottom:2rem;
-    }
-    /* company */
-    .site-title img{
-        width: 75%;
-    }
-    #company table td{
-        padding-top:0.2rem;
-    }
-    #company table th{
-        border-bottom: none; 
-        padding-bottom: 0.2rem;
-        line-height:0.2rem;
-    }
-    #company table tr{
-        padding: 10px 0;
-    }
-    #company .info table, tr ,th,td{
-        display: block;
-        width: 100%;
-    }
-    .map{
-        text-align: center;
-    }
-    .map iframe{
-        width: 400px;
-        height:300px;
+    
+    .main-left,
+    .main-right {
         max-width: 100%;
     }
-    .wrapper{
-        padding: 0 40px;
+    
+    .profile-word {
+        padding-left: 20px;
+        padding-top: 2rem;
+    }
+    
+    /* ===== プロフィールアイコンと情報 ===== */
+    .myinfo {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .profile-icon {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .info-text {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        padding: 20px;
+    }
+    
+    /* ===== About ===== */
+    .main-about {
+        margin-left: 0;
+        padding: 20px;
+        width: 100%;
+        height: auto;
+    }
+    
+    .main-article {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    /* ===== 経験テーブル ===== */
+    .main-colums th {
+        font-size: 14px;
+    }
+    
+    .main-colums td, th {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    
+    /* ===== グリッドエリア ===== */
+    .divArea {
+        grid-template-columns: 1fr; /* 1列に */
+        gap: 15px;
+    }
+    
+    /* ===== フッター ===== */
+    #footer .footer-img {
+        height: 300px;
+    }
+    
+    .contact-button {
+        top: 50px;
+        right: 10%;
+        font-size: 14px;
+        padding: 10px 25px;
+    }
+    
+    .nav-p {
+        top: 110px;
+        right: 10%;
+    }
+    
+    .nav-p li a {
+        font-size: 16px;
+    }
+    
+    /* ===== アイテム詳細 ===== */
+    .item {
+        flex-direction: column;
+    }
+    
+    .item .item-image,
+    .item .item-text {
+        width: 100%;
+    }
+    
+    /* ===== 会社情報 ===== */
+    #company .info {
+        flex-direction: column;
+    }
+    
+    #company .info th {
+        padding-right: 2rem;
+    }
+    
+    .main-right table th, td {
+        padding-left: 20px;
+        padding-right: 10px;
+        font-size: 14px;
+    }
+}
+
+/* スマホ（480px以下） */
+@media (max-width: 480px) {
+    
+    /* ===== ヘッダー ===== */
+    header {
+        padding: 30px 10px;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    /* ===== トップメッセージ ===== */
+    .top-mesaage h1 {
+        font-size: 2rem;
+        padding-left: 10px;
+    }
+    
+    .top-mesaage u {
+        padding-left: 10px;
+        font-size: 1rem;
+    }
+    
+    /* ===== 製品リスト ===== */
+    .product-list {
+        grid-template-columns: 1fr; /* 1列に */
+    }
+    
+    .product-list img {
+        height: 35vh;
+    }
+    
+    /* ===== スキルリスト ===== */
+    .skill {
+        font-size: 12px;
+        padding: 5px 12px;
+    }
+    
+    /* ===== フローカード ===== */
+    .flow-card {
+        min-width: 200px;
+        height: 280px;
+    }
+    
+    .flow-card h3 {
+        font-size: 18px;
+    }
+    
+    /* ===== アコーディオン ===== */
+    .accordion-004 summary {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+    
+    .accordion-004 p {
+        font-size: 13px;
+        padding: 0 12px 12px;
+    }
+    
+    /* ===== プロフィールアイコン ===== */
+    .profile-icon {
+        max-width: 250px;
+    }
+    
+    .info-text {
+        padding: 15px;
+    }
+    
+    .info-item h2 {
+        font-size: 16px;
+    }
+    
+    .info-item p {
+        font-size: 14px;
+    }
+    
+    /* ===== プロフィール文字 ===== */
+    .profile {
+        padding-left: 10px;
+    }
+    
+    .profile-word {
+        padding-left: 10px;
+    }
+    
+    .main-article {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    /* ===== フッター ===== */
+    #footer .footer-img {
+        height: 250px;
+    }
+    
+    .contact-button {
+        top: 30px;
+        right: 5%;
+        font-size: 12px;
+        padding: 8px 20px;
+    }
+    
+    .nav-p {
+        top: 85px;
+        right: 5%;
+    }
+    
+    .nav-p li {
+        margin-bottom: 15px;
+    }
+    
+    .nav-p li a {
+        font-size: 14px;
+    }
+    
+    /* ===== ナビゲーションメニュー ===== */
+    .nav-toggle {
+        width: 50px;
+        height: 50px;
+        top: 15px;
+        right: 15px;
+    }
+    
+    .nav-toggle span {
+        width: 25px;
+        height: 3px;
+    }
+    
+    .nav-menu ul li a {
+        font-size: 1.2rem;
+    }
+    
+    /* ===== モーダル ===== */
+    .modal-content {
+        padding: 20px;
+        margin: 30% auto;
+    }
+    
+    .modal-flex-container {
+        flex-direction: column;
+    }
+    
+    #modal-title {
+        font-size: 1.2rem;
+    }
+    
+    #modal-desc {
+        font-size: 14px;
+    }
+    
+    /* ===== テーブル ===== */
+    .main-right table th, td {
+        padding-left: 10px;
+        padding-right: 5px;
+        font-size: 12px;
+        line-height: 2;
+    }
+    
+    /* ===== コンタクトフォーム ===== */
+    #contact-form {
+        padding: 0 15px;
+    }
+    
+    #contact-form input,
+    #contact-form textarea,
+    #contact-form select {
+        font-size: 14px;
+    }
+    
+    /* ===== ラッパー ===== */
+    .wrapper {
+        padding: 0 15px;
     }
 }
