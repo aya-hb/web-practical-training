@@ -23,81 +23,7 @@ if (percentText) {
         }
     }, 17);
 }
-// ここまでがローディングのパーセンテージ===========================================================================
 
-//main　ローディングされるたびに画像が切り替わる=>仮で実装したので、もしかしたらこれから使う機会があるかもしれない
-// const robot = document.querySelector(".robot");
-
-    // window.addEventListener('load',()=>{
-    //     // robot.src=img/58n;//画像のソースを切り替え（ランダムで切り替え）
-    //         // 1. 画像のパスを配列に入れる
-    //     let images = [
-    //         '../img/Designer.png',
-    //         '../img/straight.png',
-    //         '../img/cry.png',
-    //         '../img/impressed.png',
-    //         '../img/Oko.png'
-    //     ];
-    //     // 2. 配列からランダムに画像URLを1つ取得
-    //     let randomImage = images[Math.floor(Math.random() * images.length)];
-
-    //     // 3. imgタグのsrc属性を書き換える
-    //     document.getElementById('random-img').src = randomImage;
-    // });
-
-    // console.log(images);//imagesが取れていない
-    
-    // window.addEventListener('load', () => {
-    // const el = document.getElementById('random-img');
-    // console.log('選ばれたURL:', el?.src, el?.currentSrc);
-    // });デバック結果失敗
-
-// navの編集==================================================================================================
-    // 要素の取得
-    // const openBtn = document.querySelector("#menu-open");
-    // const closeBtn = document.querySelector("#menu-close");
-    // const menuPanel = document.querySelector("#menu-panel");
-    // const menuLists = document.querySelectorAll(".menu-list li");
-    
-    // // メニュー全体で使いまわすタイミングオプション
-    // const menuOptions = {
-    //     duration:1400,
-    //     easing:"ease",
-    //     fill:"forwards",
-    // };
-    
-    // //メニューを開く処理
-    // openBtn.addEventListener('click',()=>{
-    //     menuPanel.animate(
-    //         {
-    //             translate:["100vw",0]
-    //         },
-    //         menuOptions,
-    //     );
-    //     // listの内容を一つずつ表示する
-    //     menuLists.forEach((menuList,index)=>{
-    //         menuList.animate({
-    //             opacity:[0,1],
-    //             translate:['2rem',0]
-    //         },
-    //         {
-    //             duration:2400,
-    //             delay: 500* index,
-    //             easing:'ease',
-    //             fill:'forwards'
-    //         },
-    //         );
-    //     });
-    // });
-    // // メニューを閉じる
-    // closeBtn.addEventListener('click',()=>{
-    //     menuPanel.animate(
-    //         {
-    //             translate:[0,"100vw"]
-    //         },
-    //         menuOptions,
-    //     );
-    // });
     const toggle = document.getElementById('js-nav-toggle');
         const menu = document.getElementById('js-nav-menu');
 
@@ -204,14 +130,6 @@ dots.forEach((dot, i) => {
         fadeObserver.observe(fadeIn);
     });
 
-    // 各contentにカーソルが乗れば、写真や詳細が出てくるって感じにする
-
-    // const item1 =document.querySelector(".item1");
-
-    // item1.addEventListener("mouseover",()=>{
-    //     insertAdjacentHTML(item1.html)
-    // }
-    // );
 
     // モーダルウィンドウの編集
     $(function() {
@@ -269,3 +187,20 @@ images.forEach((image) => {
 });
 
 //=================================================== ここまでがexperience.html==================================
+// ここからprofile
+    const icon = document.getElementById('profileIcon');
+
+    // マウスが乗った（mouseenter）瞬間に、クラスを追加して固定する
+    icon.addEventListener('mouseenter', () => {
+        icon.classList.add('is-active');
+    });
+
+    /* もし「もう一度クリックしたら元に戻したい」場合は、
+       上の3行を消して、以下を有効にしてください。
+       icon.addEventListener('click', () => {
+           icon.classList.toggle('is-active');
+       });
+    */
+// 動画の速度の編集
+const video = document.querySelector('video');
+video.playbackRate = 0.2;
