@@ -43,7 +43,7 @@
     padding: 0 40px;
     }
 
-    h1,h2,p{
+    h1,h2,h3,p{
         font-family: var(--oswald-font);
     }
 /* ここからindex.html============================================================================================== */
@@ -108,7 +108,7 @@ section {
 
 /* --------------------------------------------index.html------------------------- */
 /* 動画を挿入 */
-.main-video{
+video{
     object-fit: cover;
 }
 
@@ -352,10 +352,30 @@ section {
   transition: transform 0.35s ease-out;
 }
 
+.flow-container h3{
+    border-radius: 10px;
+}
 
+.develop h3{
+    color: var(--Pink);
+    background-color: var(--white);
+}
+.planning h3{
+    color: #cab8ff;
+    background-color: var(--white);
+}
+.skill-main h3{
+    color: #a0c2ea;
+    background-color: var(--white);
+} 
+
+.design h3{
+    color: #9affb2;
+    background-color: var(--white);
+}
 .flow-card{
-  min-width: 280px;
-  height: 380px;
+  min-width: 250px;
+  height: 350px;
   border-radius: 24px;
   padding: 20px;
   position: relative;
@@ -402,6 +422,11 @@ section {
 }
 .planning{
     background-image: url('../img/experience.png');
+    background-position:center;
+    background-size: cover;
+}
+.skill-main{
+    background-image: url('../img/skill.png');
     background-position:center;
     background-size: cover;
 }
@@ -988,23 +1013,21 @@ table tr:last-child th{
         display: flex;
         flex-direction: column; /* テキスト項目を縦に並べる */
         gap: 15px;              /* 項目ごとの隙間 */
-        margin-left: 30px;
-        padding-left: 30px;
-        padding-right: 30px;
-        width: 400px;
-        height: 340px;
-        border: 3px solid var(--lightPink); /* 線の太さ、種類、色 */
-        border-radius: 30px;
-        background-color: transparent; /* 背景を透明に */
+        text-align: center;
+        transform: translate(-190%, 0%); /* 真ん中に配置 */
         }
 
         .info-item h2 {
         margin: 0;
+        font-family: var(--oswald-font);
         /* 文字の大きさや色などのデザインをここに */
         }
 
-        .info-item p {
+        .info-item h3{
         margin: 5px 0 0 0; /* h2との隙間を少しあける */
+        letter-spacing: 0.3rem;
+        font-family: var(--oswald-font);
+        color: var(--accent-pink);
         }
 /* 親要素：2枚の画像を重ねるための土台 */
 .profile-icon {
@@ -1033,6 +1056,28 @@ table tr:last-child th{
     opacity: 0;
     z-index: 2;
 }
+
+    .clover {
+    display: flex;
+    flex-wrap: wrap;
+    width: 420px;
+    margin: 20px auto;
+    }
+    .clover img {
+    margin: 5px;
+    }
+    .img1 {
+    border-radius: 50% 50% 0 50%
+    }
+    .img2 {
+    border-radius: 50% 50% 50% 0
+    }
+    .img3 {
+    border-radius: 50% 0 50% 50%
+    }
+    .img4 {
+    border-radius: 0 50% 50% 50%
+    }
 
 /* ここがポイント！ 
   hover ではなく、JSで class="is-active" がついた時に表示させる 

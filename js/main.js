@@ -202,5 +202,5 @@ images.forEach((image) => {
        });
     */
 // 動画の速度の編集
-const video = document.querySelector('video');
-video.playbackRate = 0.2;
+const starVideo = document.getElementById('starVideo');
+starVideo.playbackRate = 0.2;;
