@@ -43,6 +43,13 @@
     padding: 0 40px;
     }
 
+    /* body{
+        cursor: url("../img/cursor-3.jpg"), auto;
+            } */
+     /* リンクやボタンの上（指アイコンに上書き） */
+    a, nav, input[type="submit"], input[type="button"] {
+    cursor: url("../img/cursor-8png.png") 0 0, pointer;
+}
     h1,h2,h3,p{
         font-family: var(--oswald-font);
     }
@@ -87,6 +94,33 @@
  letter-spacing: 1px;
 }
 
+/* パンくずリスト */
+.breadcrumb {
+    display: flex;
+    list-style: none;
+    padding: 3rem;
+    font-size: 1.2rem;
+    background-color: white;
+    width: 260px;
+    border-radius: 20px;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">"; /* 区切り文字 */
+    padding: 0 10px;
+    color: #ccc;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+    color: #fd5c9d;
+}
+
+/* 現在地のテキストはクリック不可に見えるよう色を変える */
+.breadcrumb-item.active {
+    color: #666;
+    pointer-events: none;
+}
 /* ここまでがローディング画面======================================== */
 
 /* topにくる画像の編集 */
@@ -134,7 +168,7 @@ video{
 }
 
 .skills h2 {
-  color: #ff8fb1; /* 少し濃いめのパステルピンク */
+  color:var(--accent-pink); /* 少し濃いめのパステルピンク */
   font-size: 1.5rem;
   margin-bottom: 20px;
   display: flex;
@@ -152,7 +186,7 @@ video{
 
 /* 各スキルタグの共通デザイン */
 .skill {
-  background: #fff;
+  background: #f45899;
   border: 2px solid #ffb6c1; /* 基本の枠線色 */
   border-radius: 25px; /* 角を丸くしてカプセル型に */
   padding: 8px 20px;
@@ -166,7 +200,7 @@ video{
 /* ホバーした時に少し浮き上がる演出 */
 .skill:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 0 #ffe4e9;
+  box-shadow: 0 6px 0 #d56d90;
 }
 
 /* 個別に色を変えてキャンディカラーにする */
