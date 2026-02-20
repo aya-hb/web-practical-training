@@ -11,9 +11,11 @@
     --lightPink:#ffb6c1;
     --Pink:#ffc0cb;
     --oswald-font: "Oswald", sans-serif;
-    --font-rounded: "M PLUS Rounded 1c",serif;
+    --font-rounded: "M PLUS Rounded 1c",serif;;
+    --font-rounded: 'Kiwi Maru', serif; /* ここを書き換え */
     }
 
+    
     #header{
     display: flex;
     justify-content: space-between;
@@ -42,17 +44,29 @@
     margin: 0 auto;    /* 左右中央寄せ */
     padding: 0 40px;
     }
+    .kiwi-maru-regular {
+    font-family: "Kiwi Maru", serif;
+    font-weight: 400;
+    font-style: normal;
+    }
+
+    h1,h2,h3{
+        font-family: "Kiwi Maru", serif;
+    }
+    p,li,a{
+        font-family: "Kiwi Maru", serif;
+    }
 
     /* body{
-        cursor: url("../img/cursor-3.jpg"), auto;
-            } */
+        cursor:url("../img/corsol-11png.png")2 2,auto;
+    } */
      /* リンクやボタンの上（指アイコンに上書き） */
     a, nav, input[type="submit"], input[type="button"] {
-    cursor: url("../img/cursor-8png.png") 0 0, pointer;
+    cursor: url("../img/corsol-11png.png") 2 2, pointer;
 }
-    h1,h2,h3,p{
+    /* h1,h2,h3,p{
         font-family: var(--oswald-font);
-    }
+    } */
 /* ここからindex.html============================================================================================== */
 /* ===== ローディング画面 ===================================== */
 .loading-screen {
@@ -559,7 +573,7 @@ video{
     position: absolute;
     top: 10px;
     right: 15px;
-    font-size: 28px;
+    font-size: 50px;
     cursor: pointer;
     color: #666;
 }
