@@ -57,6 +57,10 @@
         font-family: "Kiwi Maru", serif;
     }
 
+    a{
+        text-decoration: none;
+        color: var(--white);
+    }
     /* body{
         cursor:url("../img/corsol-11png.png")2 2,auto;
     } */
